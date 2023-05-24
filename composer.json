@@ -1,0 +1,28 @@
+{
+    "name": "alxmdev/api-tiny-erp",
+    "description": "Package was developed to integrate the Tiny ERP API with PHP, providing a powerful and flexible solution for companies of all sizes.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Alxmdev\\ApiTinyErp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alexandre Meireles",
+            "email": "alexandre1.95oliveira@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "pestphp/pest": "^2.6"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^7.7"
+    }
+}
