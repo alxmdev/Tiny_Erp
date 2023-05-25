@@ -3,6 +3,19 @@
 namespace Alxmdev\ApiTinyErp;
 
 use Alxmdev\ApiTinyErp\api\Clientes;
+use Alxmdev\ApiTinyErp\api\ContasPagar;
+use Alxmdev\ApiTinyErp\api\ContasReceber;
+use Alxmdev\ApiTinyErp\api\Contratos;
+use Alxmdev\ApiTinyErp\api\Expedicoes;
+use Alxmdev\ApiTinyErp\api\Fretes;
+use Alxmdev\ApiTinyErp\api\Informacoes;
+use Alxmdev\ApiTinyErp\api\Nfe;
+use Alxmdev\ApiTinyErp\api\PDV;
+use Alxmdev\ApiTinyErp\api\Pedidos;
+use Alxmdev\ApiTinyErp\api\Precos;
+use Alxmdev\ApiTinyErp\api\Produtos;
+use Alxmdev\ApiTinyErp\api\Tags;
+use Vendedores;
 
 class TinyErp
 {
@@ -13,7 +26,6 @@ class TinyErp
         $this->token = $token;
     }
 
-
     /**
      * @return Informações
      */
@@ -21,7 +33,6 @@ class TinyErp
     {
         return new Informacoes($this->token);
     }
-
 
     /**
      * @return Clientes
