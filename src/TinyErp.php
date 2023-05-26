@@ -15,7 +15,7 @@ use Alxmdev\ApiTinyErp\api\Pedidos;
 use Alxmdev\ApiTinyErp\api\Precos;
 use Alxmdev\ApiTinyErp\api\Produtos;
 use Alxmdev\ApiTinyErp\api\Tags;
-use Vendedores;
+use Alxmdev\ApiTinyErp\api\Vendedores;
 
 class TinyErp
 {

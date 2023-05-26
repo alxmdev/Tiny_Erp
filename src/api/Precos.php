@@ -2,6 +2,17 @@
 
 namespace Alxmdev\ApiTinyErp\api;
 
-class Precos
+use Alxmdev\ApiTinyErp\request\HttpRequest;
+
+class Precos extends HttpRequest
 {
+    /**
+     * Precos constructor.
+     *
+     * @param string $token
+     */
+    public function __construct(string $token)
+    {
+        $this->setToken($token);
+    }
 }

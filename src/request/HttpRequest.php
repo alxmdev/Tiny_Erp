@@ -44,24 +44,42 @@ class HttpRequest
         return $this;
     }
 
-    public function post()
+    /**
+     * @param string $action
+     *
+     * @return $this
+     */
+    public function setAction(string $action): HttpRequest
     {
+        $this->action = $action;
+        return $this;
     }
 
-    public function get()
+    /**
+     * @return object
+     */
+    public function getCallback(): ?object
+    {
+        return $this->callback;
+    }
+
+    public function post(): HttpRequest
+    {
+
+        return $this;
+    }
+
+    public function get(): HttpRequest
     {
 
         $url = HttpRequest::TINY_ENDPOINT . "{$this->action}";
-
         $params = array(
             'token' => $this->token,
             'formato' => 'json'
         );
         $params = array_merge($params, $this->params);
-        $request = new Request('GET', $url, [
-            'query' => $params
-        ]);
-        $res = $this->client->sendAsync($request)->wait();
-        echo $res->getBody();
+        $response = $this->client->get($url, ['query' => $params])->getBody()->getContents();
+        $this->callback = json_decode($response);
+        return $this;
     }
 }
