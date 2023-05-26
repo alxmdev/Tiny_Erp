@@ -13,6 +13,7 @@ class Produtos extends HttpRequest
      */
     public function __construct(string $token)
     {
+        parent::__construct();
         $this->setToken($token);
     }
 }

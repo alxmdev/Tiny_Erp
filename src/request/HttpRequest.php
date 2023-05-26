@@ -21,7 +21,7 @@ class HttpRequest
     /** @var */
     private $params;
 
-    public function __construct(string $token)
+    public function __construct()
     {
         $this->client = new Client();
     }
@@ -77,7 +77,10 @@ class HttpRequest
             'token' => $this->token,
             'formato' => 'json'
         );
-        $params = array_merge($params, $this->params);
+        if ($this->params != null) {
+            $params = array_merge($params, $this->params);
+        }
+
         $response = $this->client->get($url, ['query' => $params])->getBody()->getContents();
         $this->callback = json_decode($response);
         return $this;
