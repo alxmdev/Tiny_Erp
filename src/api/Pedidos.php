@@ -57,7 +57,7 @@ class Pedidos extends HttpRequest
 
     public function getOrder(int $id): ?object
     {
-        $params = array("id  " => $id);
+        $params = array("id" => $id);
         return $this->setAction("pedido.obter.php")->setParams($params)->get()->getCallback();
     }
 }
